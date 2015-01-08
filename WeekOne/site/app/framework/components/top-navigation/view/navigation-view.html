@@ -1,0 +1,11 @@
+<div class="navigation-view" data-ng-controller="navigationController as navigationCtrl">
+    <h1>Navigation</h1>
+    <ul class='nav-list'>
+       <li data-ng-repeat="item in navigationCtrl.items">
+           <a ui-sref="{{item.id}}">
+               <span ng-class="item.iconClass"></span>
+               {{ item.name }}
+           </a>
+       </li>
+    </ul>
+</div>
