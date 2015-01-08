@@ -1,4 +1,0 @@
-vendor/**
-Gruntfile.js
-server/node_modules/**
-node_modules/**
