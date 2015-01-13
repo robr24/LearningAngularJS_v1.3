@@ -1,0 +1,26 @@
+<p>
+<ul>
+  <li><a ui-sref="todo-repeat">Repeat List</a></li>
+</ul>
+
+</p>
+<div class="todo-view">
+  <h3>One Way Data Binding: To Do List</h3>
+    <div>There are {{todoCtrl.todos.length}} items</div>
+    <div>
+      There are <span ng-bind="todoCtrl.todos.length"></span> items
+    </div>
+    <div ng-bind-template=
+           "First: {{todoCtrl.todos[0].action}}. Second: {{todoCtrl.todos[1].action}}"> </div>
+    <div ng-non-bindable>
+      AngularJS uses {{ and }} characters for templates
+    </div>
+
+
+  <h3>Two Way Data Binding</h3>
+  <div>The first todo item is: {{ todoCtrl.todos[0].action }}</div>
+
+  <div>
+    <input type="text" ng-model="todoCtrl.todos[0].action"/>
+  </div>
+</div>

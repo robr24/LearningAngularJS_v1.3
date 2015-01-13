@@ -1,0 +1,19 @@
+<p>
+<ul>
+  <li><a ui-sref="todo-switch">ng-Switch</a></li>
+</ul>
+
+</p>
+<div class="todo-view">
+
+  <table class="table">
+    <thead> <tr>
+    </tr> </thead>
+    <tr ng-repeat="item in todoCtrl.todos" ng-class="$odd ? 'odd' : 'even'">
+      <td>{{$index + 1}}</td>
+      <td ng-repeat="prop in item">{{prop}}</td>
+    </tr>
+  </table>
+
+
+</div>
