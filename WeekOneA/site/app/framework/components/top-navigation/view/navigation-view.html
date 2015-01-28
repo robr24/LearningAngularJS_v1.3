@@ -1,0 +1,23 @@
+<div class="navigation-view" data-ng-controller="navigationController as navigationCtrl">
+    <h1>Navigation: {{navigationCtrl.appTitle}}</h1>
+    <ul class="nav-list">
+        <li data-ng-repeat="item in navigationCtrl.items">
+            <a  ui-sref="{{item.id}}"
+                ui-sref-active="active">
+                <span data-ng-class="item.iconClass"></span>
+                {{ item.name }}
+            </a>
+        </li>
+    </ul>
+
+    <!-- TODO: Grunt settings //
+            A. Add lintCode as task for watch
+            B. Add reload: true as option for watch -->
+
+    <!-- TODO: Navigation //
+            1. Built out navigation list : Home, About, Contact
+            2. Module for each list item (subdirectories)
+            3. View html for each new module
+            4. Add each module to ui-router via stateProvider
+            5. Cover active state -->
+</div>

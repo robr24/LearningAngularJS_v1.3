@@ -53,6 +53,7 @@ module.exports = function (grunt) {
           spawn: false,
           reload: true
         },
+
         files: [createFolderGlobs(['*.js', '*.less', '*.html']), '!_SpecRunner.html', '!.grunt'],
         tasks: ['lintCode'] //all the tasks are run dynamically during the watch event handler
       }
@@ -225,10 +226,9 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build', ['lintCode', 'clean:before', 'less', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'uglify', 'copy', 'htmlmin', 'clean:after']);
-  grunt.registerTask('serve', ['dom_munger:read', 'connect', 'lintCode', 'watch']);
+  grunt.registerTask('serve', ['dom_munger:read', 'lintCode', 'connect', 'watch']);
   grunt.registerTask('test', ['dom_munger:read', 'karma:all_tests']);
   grunt.registerTask('bower', ['gitclone']);
-
 
   /**
    * Lints JS, HTML, and CSS files.

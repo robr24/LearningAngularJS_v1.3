@@ -37,14 +37,14 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    connect: {
-      main: {
-        options: {
-          port: 9001,
-          open: true
-        }
-      }
-    },
+//    connect: {
+//      main: {
+//        options: {
+//          port: 9001,
+//          open: true
+//        }
+//      }
+//    },
     watch: {
       main: {
         options: {
@@ -224,11 +224,12 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadTasks('grunt-tasks');
+
   grunt.registerTask('build', ['lintCode', 'clean:before', 'less', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'uglify', 'copy', 'htmlmin', 'clean:after']);
-  grunt.registerTask('serve', ['dom_munger:read', 'connect', 'lintCode', 'watch']);
+  grunt.registerTask('serve', ['dom_munger:read', 'configureProxies:server', 'lintCode', 'connect', 'watch']);
   grunt.registerTask('test', ['dom_munger:read', 'karma:all_tests']);
   grunt.registerTask('bower', ['gitclone']);
-
 
   /**
    * Lints JS, HTML, and CSS files.

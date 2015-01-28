@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="site">
 <head>
-  <title>AngularJS</title>
+  <title>site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
   <meta http-equiv="x-ua-compatible" content="IE=edge">
@@ -16,8 +16,9 @@
 
   <div>
     <div id="content" class="container">
-      <div class="row">
         <div data-ng-include src="'app/framework/components/top-navigation/view/navigation-view.html'"></div>
+
+      <div class="row">
         <div ui-view style="clear: both;">
         </div>
       </div>
@@ -56,12 +57,12 @@
 
   <!-- Main App JS -->
   <script src="app/app.js"></script>
-  <script src="app/framework/components/top-navigation/top-navigation.js"></script>
+  <script src="app/framework/components/top-navigation/navigation-module.js"></script>
   <script src="app/framework/components/top-navigation/service/navigation-service.js"></script>
   <script src="app/framework/components/top-navigation/controller/navigation-controller.js"></script>
-  <script src="app/contact/contact.js"></script>
-  <script src="app/about/about.js"></script>
   <script src="app/home/home.js"></script>
+  <script src="app/about/about.js"></script>
+  <script src="app/contact/contact.js"></script>
   <!-- Add New Component JS Above -->
 
 

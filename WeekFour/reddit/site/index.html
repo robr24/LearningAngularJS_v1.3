@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="site">
+<html ng-app="reddit">
 <head>
-  <title>AngularJS</title>
+  <title>reddit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
   <meta http-equiv="x-ua-compatible" content="IE=edge">
@@ -17,8 +17,7 @@
   <div>
     <div id="content" class="container">
       <div class="row">
-        <div data-ng-include src="'app/framework/components/top-navigation/view/navigation-view.html'"></div>
-        <div ui-view style="clear: both;">
+        <div ui-view>
         </div>
       </div>
     </div>
@@ -35,6 +34,7 @@
   <script src="vendor/underscore/underscore.js"></script>
   <script src="vendor/moment/moment.js"></script>
   <script src="vendor/angular/angular.js"></script>
+  <script src="vendor/nginfinitescroll/build/ng-infinite-scroll.js"></script>
   <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="vendor/angular-animate/angular-animate.js"></script>
   <script src="vendor/angular-resource/angular-resource.js"></script>
@@ -56,12 +56,10 @@
 
   <!-- Main App JS -->
   <script src="app/app.js"></script>
-  <script src="app/framework/components/top-navigation/top-navigation.js"></script>
-  <script src="app/framework/components/top-navigation/service/navigation-service.js"></script>
-  <script src="app/framework/components/top-navigation/controller/navigation-controller.js"></script>
-  <script src="app/contact/contact.js"></script>
-  <script src="app/about/about.js"></script>
-  <script src="app/home/home.js"></script>
+  <script src="app/framework/components/reddit/reddit-module.js"></script>
+  <script src="app/framework/components/reddit/controller/reddit-controller.js"></script>
+  <script src="app/framework/components/reddit/service/reddit-service.js"></script>
+  <script src="app/framework/components/reddit/factory/reddit-factory.js"></script>
   <!-- Add New Component JS Above -->
 
 
