@@ -9,9 +9,10 @@ angular.module('imageSearch').service('imagesService', ['$http', '$q', 'clientId
    */
   this.getPopularImages = function() {
     var deferred = $q.defer();
-    var url = '/instagram/v1/media/popular?client_id=' + clientId;
+    var url = 'https://api.instagram.com/v1/media/popular?client_id=' + clientId +  '&callback=JSON_CALLBACK';
+//    var url = "app/framework/components/image-search/model/ig-popular.json";
 
-    $http.get(url)
+    $http.jsonp(url)
       .success(function (results) {
         var data = results || [];
         deferred.resolve(data);
