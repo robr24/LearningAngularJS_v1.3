@@ -18,6 +18,62 @@
   h3 {
     width: 80%;
   }
+}
 
+
+.images-slideshow {
+  background: #000;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 0 2px #fff;
+  }
+  .username {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+  }
+  .tags {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    right: 20px;
+  }
+  .img {
+
+    .bg_img {
+      -webkit-animation-name: MOVE-BG;
+      -webkit-animation-duration: 10s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: 1;
+      display: block;
+      background-repeat: no-repeat;
+      background-position: 50% 0%;
+      background-size: cover;
+    }
+  }
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+  }
+}
+
+@-webkit-keyframes MOVE-BG {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
 }
 

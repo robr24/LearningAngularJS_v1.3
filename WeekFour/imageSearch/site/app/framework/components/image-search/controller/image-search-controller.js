@@ -1,14 +1,37 @@
-angular.module('imageSearch').controller('imageSearchController', ['$scope', 'imagesService', function ($scope, imagesService) {
+angular.module('imageSearch').controller('imageSearchController', ['$scope', '$interval', 'imagesService', function ($scope, $interval, imagesService) {
 
-  var ctrl = this;
+  var ctrl = this,
+    interval;
 
   ctrl.igData = [];
+  ctrl.activeImageIndex = 0;
+
+  ctrl.incrementActiveIndex = function() {
+
+    if (ctrl.activeImageIndex === ctrl.igData.length - 1) {
+      ctrl.getPopularImages();
+    }
+    else {
+      ctrl.activeImageIndex++;
+    }
+  };
+
+  ctrl.resetActiveIndex = function() {
+    ctrl.activeImageIndex = 0;
+  };
+
 
   ctrl.getPopularImages = function () {
     console.log('getting popular images from instagram');
+    if (interval) {
+      $interval.cancel(interval);
+    }
     imagesService.getPopularImages()
       .then(function (results) {
         ctrl.igData = results.data;
+        ctrl.resetActiveIndex();
+        interval = $interval(ctrl.incrementActiveIndex, 8000);
+        console.log(ctrl.igData);
       }, function (error) {
         console.log('there was an error in getting popular images');
       });
@@ -51,10 +74,10 @@ angular.module('imageSearch').controller('imageSearchController', ['$scope', 'im
       });
   };
 
-//  ctrl.getPopularImages();
+  ctrl.getPopularImages();
 
   // ctrl.getImagesByTag('sexy');          /// wtf??!!??!?!?
-  ctrl.getImagesByTag('beautiful');
+  //ctrl.getImagesByTag('beautiful');
 
 //  ctrl.getLocIdOfLocation();
 }]);
