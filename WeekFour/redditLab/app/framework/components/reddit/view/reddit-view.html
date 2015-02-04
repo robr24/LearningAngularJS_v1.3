@@ -1,0 +1,27 @@
+<div class="reddit-view">
+    <div infinite-scroll="redditCtrl.reddit.nextPage()"
+         infinite-scroll-disabled="redditCtrl.reddit.busy"
+         infinite-scroll-distance="1">
+        <ul data-ng-repeat="item in redditCtrl.reddit.items"
+            data-ng-class="{first: $first, last: $last}"
+            data-ng-class-even="'even'"
+            data-ng-class-odd="'odd'">
+            
+            <li class="score">{{ item.score }}</li>
+            <li class="thumb">
+                <a ng-href="{{ item.url }}" target="_blank">
+                    <img ng-src="{{ item.thumbnail }}" alt=""/>
+                </a>
+            </li>
+            <li class="title">
+                <a ng-href="{{ item.url }}" target="_blank">
+                    {{ item.title }}
+                </a>
+            </li>
+            <li class="byline">by {{ item.author }}</li>
+        </ul>
+        <ul data-ng-show="redditCtrl.reddit.busy">
+            <li>Loading Data....</li>
+        </ul>
+    </div>
+</div>
