@@ -23,12 +23,16 @@
 
 .images-slideshow {
   background: #000;
+  position: relative;
+  overflow: hidden;
 
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   li {
     margin: 0;
@@ -66,6 +70,19 @@
     left: 20px;
     right: 20px;
   }
+
+  .animated.ng-enter {
+    -webkit-animation: bounceInRight 1.25s;
+    -moz-animation: bounceInRight 1.25s;
+    -o-animation: bounceInRight 1.25s;
+    animation: bounceInRight 1.25s;
+  }
+  .animated.ng-leave {
+    -webkit-animation: bounceOutLeft 1.25s;
+    -moz-animation: bounceOutLeft 1.25s;
+    -o-animation: bounceOutLeft 1.25s;
+    animation: bounceOutLeft 1.25s;
+  }
 }
 
 @-webkit-keyframes MOVE-BG {
@@ -73,7 +90,7 @@
     background-position: 50% 0%;
   }
   100% {
-    background-position: 50% 100%;
+    background-position: 50% 80%;
   }
 }
 
