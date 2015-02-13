@@ -1,0 +1,12 @@
+<div class="instamatic-view">
+    <ul data-ng-repeat="item in instamaticCtrl.igData">
+        <li><h3>{{ item.user.username }}</h3></li>
+        <li><em>
+            <span data-ng-repeat="tag in item.tags">#{{ tag }} </span>
+        </em></li>
+        <li>
+            <img data-ng-src="{{ item.images.low_resolution.url }}"/>
+        </li>
+        <li> <h2>{{ item.caption.text }}</h2></li>
+    </ul>
+</div>

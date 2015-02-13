@@ -76,8 +76,8 @@ angular.module('imageSearch').controller('imageSearchController', ['$scope', '$i
 
   ctrl.getPopularImages();
 
-  // ctrl.getImagesByTag('sexy');          /// wtf??!!??!?!?
-  //ctrl.getImagesByTag('beautiful');
+//  ctrl.getImagesByTag('sexy');          /// wtf??!!??!?!?
+//  ctrl.getImagesByTag('beautiful');
 
 //  ctrl.getLocIdOfLocation();
 }]);
