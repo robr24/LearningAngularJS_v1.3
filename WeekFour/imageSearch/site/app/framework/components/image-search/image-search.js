@@ -3,7 +3,7 @@ angular.module('imageSearch', ['ui.bootstrap','ui.utils','ui.router','ngAnimate'
 angular.module('imageSearch').config(function($stateProvider) {
   $stateProvider.state('images', {
     url: '/images',
-    templateUrl: 'app/framework/components/image-search/view/images-slideshow.html',
+    templateUrl: 'app/framework/components/image-search/view/images-view.html',
     controller: 'imageSearchController',
     controllerAs: 'imageSearchCtrl'
   });
